@@ -1,0 +1,31 @@
+{
+    "users": [
+        {
+            "userId": 0,
+            "firstName" : "Sherry",
+            "lastName": "Cuenco"
+        },
+        {
+            "userId": 1,
+            "firstName" : "Mike",
+            "lastName": "Cuenco"
+        }
+    ],
+    "tasks": [
+        {
+            "taskId": 0,
+            "title": "Do homework",
+            "details": "Finish Angular hands on exercise. Read documentation, watch videos, research online."
+        },
+        {
+            "taskId": 1,
+            "title": "Cook diner",
+            "details": "Marinate chicken, cook rice, saute vegetables, slice fruits."
+        },
+        {
+            "taskId": 2,
+            "title": "Do laundry",
+            "details": "Separate the dark colors from whites. Place in the drier. Fold laundry then place them the in coset."
+        }
+    ]
+}
