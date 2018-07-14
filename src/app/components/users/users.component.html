@@ -1,8 +1,25 @@
-<div>
-  <h3>Users</h3>
+<h2>Users</h2>
+<div class="card card-body m-5">
+  <form (ngSubmit)="addUser()" >
+    <!-- <div class="form-group">
+          <label for="userId">User Id</label>
+          <input type="number" class="form-control" required [(ngModel)]="user.userId" name="userId">
+    </div> -->
+    <div class="form-group">
+      <label for="firstName">First Name</label>
+      <input type="text" class="form-control" required [(ngModel)]="user.firstName" name="firstName">
+    </div>
+    <div class="form-group">
+      <label>Last Name</label>
+      <input type="text" [(ngModel)]="user.lastName" required class="form-control" name="lastName">
+    </div>
+    <button type="submit" class="btn btn-dark btn-block mb-2">Add New User</button>
+  </form>
 </div>
-<ul>
-  <li *ngFor="let user of users">
-    <p>{{user.userId}} {{user.firstName}} {{user.lastName}}</p>
+<div class="card card-body m-5">
+<ul class="list-group mb-4">
+  <li class="list-group-item" *ngFor="let user of users">
+    {{user.firstName}} {{user.lastName}}
   </li>
 </ul>
+</div>
