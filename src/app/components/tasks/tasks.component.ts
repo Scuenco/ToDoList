@@ -1,6 +1,7 @@
+//  import { TaskFormComponent } from './../task-form/task-form.component';
 import { Task } from './../../models/Task';
 import { TaskService } from './../../services/task.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 @Component({
   selector: 'app-tasks',
@@ -9,11 +10,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TasksComponent implements OnInit {
 tasks: Task[];
-currentTask: Task = {
-  id: 0,
-  title: '',
-  details: ''
-};
 
   constructor(private service: TaskService) { }
 
@@ -26,13 +22,5 @@ currentTask: Task = {
   getTasks() {
     this.service.getTasks().subscribe(tasks => this.tasks = tasks);
   }
-  editTask(task) {
-    this.currentTask = task;
-    console.log(this.currentTask);
-  }
-  deleteTask(task) {
-    this.service.deleteTask(task.id).subscribe(() =>
-    this.getTasks()); // to refresh tasklist
-  }
-  /* addTask() is found under task-form.component */
+   /* addTask() is found under task-form.component */
 }

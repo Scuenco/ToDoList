@@ -28,11 +28,6 @@
   ],
   "tasks": [
     {
-      "id": 0,
-      "title": "oks na oks!!!",
-      "details": "oki doki"
-    },
-    {
       "id": 1,
       "title": "Cook diner ",
       "details": "Marinate chicken, cook rice, saute vegetables, slice fruits."
@@ -43,14 +38,9 @@
       "details": "Separate the dark colors from whites. Place in the drier. Fold laundry then place them the in coset."
     },
     {
-      "title": "post",
-      "details": "my latest post",
-      "id": 3
-    },
-    {
-      "id": 4,
-      "title": "test",
-      "details": "trst"
+      "id": 3,
+      "title": "Do your homework",
+      "details": "Finish Angular final project."
     }
   ]
 }

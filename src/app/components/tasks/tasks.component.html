@@ -1,13 +1,9 @@
-<app-task-form [currentTask]="currentTask" (newTask)="addToTaskList($event)"></app-task-form>
-<!-- [currentTask] is from TasksComponent being inputed to TaskForm; 
-  (newTask) is from TaskFormComponent being exported to TasksComponent.</app-task-form> -->
-
-<h3>Tasks</h3>
+<app-task-form (newTask)="addToTaskList($event)"></app-task-form>
+<div class="container">
+<h3>Task List</h3>
 <div class="card" *ngFor="let task of tasks">
   <div class="card-body" >
-    <h4>{{task.title}}</h4>
-    <p>{{task.details}}</p>
-    <button (click)="editTask(task)" class="btn btn-default"><i class="fa fa-pencil">Edit</i></button>  
-    <button (click)="deleteTask(task)" class="btn btn-danger"><i class="fa fa-trash-o">Delete</i></button> 
+    <a routerLink="/tasks/{{task.id}}">{{task.title}}</a>
   </div>
+</div>
 </div>

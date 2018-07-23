@@ -8,32 +8,32 @@ import { Task } from '../../models/Task';
   styleUrls: ['./task-form.component.css']
 })
 export class TaskFormComponent implements OnInit {
-  // task: Task = {id: 0, title: '', details: '' };
+  task: Task = {id: 0, title: '', details: '' };
   @Output() newTask: EventEmitter<Task> = new EventEmitter();
-  @Input() currentTask: Task ;
+  // @Input() currentTask: Task ;
   constructor(private service: TaskService) { }
 
   ngOnInit() {
   }
 
   addTask() {
-    console.log('AddTask:', this.currentTask);
-    if (!this.currentTask.title || !this.currentTask.details) {
+    console.log('AddTask:', this.task);
+    if (!this.task.title || !this.task.details) {
       alert ('Please add a title|details.');
     } else {
-      this.service.addTask(this.currentTask).subscribe((tsk) => {
+      this.service.addTask(this.task).subscribe((tsk) => {
         // emit the event fr task-form.component
         this.newTask.emit(tsk);
       });
     }
   }
-  updateTask() {
-    this.service.updateTask(this.currentTask).subscribe( task => {
-      console.log(task);
-      this.service.getTasks().subscribe((tasks) => {
-        console.log(tasks);
-        this.newTask.emit(task);
-      });
-      });
-  }
+  // updateTask() {
+  //   this.service.updateTask(this.currentTask).subscribe( task => {
+  //     console.log(task);
+  //     this.service.getTasks().subscribe((tasks) => {
+  //       console.log(tasks);
+  //       this.newTask.emit(task);
+  //     });
+  //     });
+  // }
 }
