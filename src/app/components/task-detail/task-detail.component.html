@@ -1,9 +1,12 @@
 <div class="container">
 <h3>Task Details</h3>
 <div *ngIf="!isEdit" class="card card-body m-5">
-    <!-- <p>{{task.id}}</p> -->
-    <h4>{{task.title}}</h4>
-    <p>{{task.details}}</p>
+  <div class="form-group">
+    <label for="title">Title:</label><h4>{{task.title}}</h4>    
+  </div>
+  <div class="form-group">
+    <label>Completed:</label><h4>{{task.completed}}</h4>
+  </div>
 </div>
 <div *ngIf="isEdit" class="card card-body m-5">
     <form >
@@ -12,8 +15,8 @@
         <input type="text" class="form-control" required [(ngModel)]="task.title" name="title">
       </div>
       <div class="form-group">
-        <label>Details</label>
-        <input type="text" class="form-control" required [(ngModel)]="task.details" name="details">
+        <label>Completed</label>
+        <input type="text" class="form-control" required [(ngModel)]="task.completed" name="details">
       </div>
       <input type="hidden" [(ngModel)]="task.id" name="id">
       <button (click)="updateTask(task)" class="btn btn-block btn-warning">Update Task</button>

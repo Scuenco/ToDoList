@@ -8,7 +8,7 @@ import { Task } from '../../models/Task';
   styleUrls: ['./task-form.component.css']
 })
 export class TaskFormComponent implements OnInit {
-  task: Task = {id: 0, title: '', details: '' };
+  task: Task = {id: 0, title: '', completed: false };
   @Output() newTask: EventEmitter<Task> = new EventEmitter();
   // @Input() currentTask: Task ;
   constructor(private service: TaskService) { }
@@ -17,9 +17,8 @@ export class TaskFormComponent implements OnInit {
   }
 
   addTask() {
-    console.log('AddTask:', this.task);
-    if (!this.task.title || !this.task.details) {
-      alert ('Please add a title|details.');
+    if (!this.task.title) {
+      alert ('Please add a title.');
     } else {
       this.service.addTask(this.task).subscribe((tsk) => {
         // emit the event fr task-form.component
@@ -27,13 +26,4 @@ export class TaskFormComponent implements OnInit {
       });
     }
   }
-  // updateTask() {
-  //   this.service.updateTask(this.currentTask).subscribe( task => {
-  //     console.log(task);
-  //     this.service.getTasks().subscribe((tasks) => {
-  //       console.log(tasks);
-  //       this.newTask.emit(task);
-  //     });
-  //     });
-  // }
 }

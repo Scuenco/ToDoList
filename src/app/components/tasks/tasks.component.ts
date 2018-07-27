@@ -1,7 +1,6 @@
-//  import { TaskFormComponent } from './../task-form/task-form.component';
 import { Task } from './../../models/Task';
 import { TaskService } from './../../services/task.service';
-import { Component, OnInit, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-tasks',

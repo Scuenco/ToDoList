@@ -10,7 +10,7 @@ import { Location } from '@angular/common';
   styleUrls: ['./task-detail.component.css']
 })
 export class TaskDetailComponent implements OnInit {
-task: Task = {id: 0, title: '', details: ''};
+task: Task = {id: 0, title: '', completed: false};
 isEdit = false;
 
   constructor(
@@ -30,7 +30,6 @@ isEdit = false;
   }
   updateTask(task: Task) {
     this.service.updateTask(task).subscribe( t => {
-      console.log(t);
       this.goBack();
       });
   }
