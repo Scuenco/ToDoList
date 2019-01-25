@@ -40,10 +40,16 @@
       "completed": false
     },
     {
-      "id": 3,
-      "title": "Angular homework",
-      "details": "Finish Angular final project.",
-      "completed": true
+      "completed": true,
+      "title": "Water plants",
+      "details": "Time to water your plants.",
+      "id": 4
+    },
+    {
+      "completed": true,
+      "title": "Wash Dishes",
+      "details": "Wash all the dishes.",
+      "id": 5
     }
   ]
 }

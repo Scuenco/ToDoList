@@ -9,8 +9,8 @@ const httpOptions = {
 
 @Injectable()
 export class TaskService {
-   //private taskUrl = 'http://localhost:3000/tasks';  // for development
-  private taskUrl = 'https://jsonplaceholder.typicode.com/todos';  // for deployment
+  //private taskUrl = 'http://localhost:3000/tasks';  // * for local
+  private taskUrl = 'https://jsonplaceholder.typicode.com/todos';  // for github
   public tasks: Task[];
 
   constructor(private http: HttpClient) { }
@@ -33,4 +33,4 @@ export class TaskService {
     return this.http.delete<Task>(`${this.taskUrl}/${id}`);
   }
 }
-// From terminal: json-server --watch mockdb.json
+// * for local: json-server --watch mockdb.json
