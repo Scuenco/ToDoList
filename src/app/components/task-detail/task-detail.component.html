@@ -1,13 +1,18 @@
 <div class="container">
 <h3>Task Details</h3>
-<div *ngIf="!isEdit" class="card card-body m-5">
+<!-- if Edit is false (view details only) -->
+<div  *ngIf="!isEdit" class="card card-body m-5">
   <div class="form-group">
     <label for="title">Title:</label><h4>{{task.title}}</h4>    
   </div>
   <div class="form-group">
-    <label>Completed:</label><h4>{{task.completed}}</h4>
+    <label for="detail">Details:</label><h4>{{task.details}}</h4>
+  </div>
+  <div class="form-group">
+    <label>Completed:</label>{{task.completed ? " Yes" : " No"}}
   </div>
 </div>
+<!-- if Edit is true -->
 <div *ngIf="isEdit" class="card card-body m-5">
     <form >
       <div class="form-group">
@@ -15,14 +20,17 @@
         <input type="text" class="form-control" required [(ngModel)]="task.title" name="title">
       </div>
       <div class="form-group">
-        <label>Completed</label>
-        <input type="text" class="form-control" required [(ngModel)]="task.completed" name="details">
+          <label for="detail">Details</label>
+          <input type="text" class="form-control" [(ngModel)]="task.details" name="detail">
+      </div>
+      <div class="form-group">
+        <label>Completed <input type="checkbox" [(ngModel)]="task.completed" name="completed"></label>
       </div>
       <input type="hidden" [(ngModel)]="task.id" name="id">
       <button (click)="updateTask(task)" class="btn btn-block btn-warning">Update Task</button>
     </form>
 </div>
-<button (click)="editTask(task)" class="btn btn-default"><i class="fa fa-pencil"> Edit</i></button>  
-<button (click)="deleteTask(task)" class="btn btn-danger"><i class="fa fa-trash-o"> Delete</i></button>
-<button (click)="goBack()" class="btn btn-default">Go Back</button>
+<button (click)="editTask(task)" class="btn btn-default"><i class="fas fa-pencil-alt"> Edit</i></button>  
+<button (click)="deleteTask(task)" class="btn btn-danger"><i class="fas fa-trash-alt"> Delete</i></button>
+<button (click)="goBack()" class="btn btn-default"><i class="far fa-caret-square-left"> Go Back</i></button>
 </div>

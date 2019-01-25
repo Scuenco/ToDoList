@@ -8,10 +8,10 @@ import { Task } from '../../models/Task';
   styleUrls: ['./task-form.component.css']
 })
 export class TaskFormComponent implements OnInit {
-  task: Task = {id: 0, title: '', completed: false };
+  task: Task = new Task();
   @Output() newTask: EventEmitter<Task> = new EventEmitter();
   // @Input() currentTask: Task ;
-  constructor(private service: TaskService) { }
+  constructor(private taskService: TaskService) { }
 
   ngOnInit() {
   }
@@ -20,9 +20,10 @@ export class TaskFormComponent implements OnInit {
     if (!this.task.title) {
       alert ('Please add a title.');
     } else {
-      this.service.addTask(this.task).subscribe((tsk) => {
-        // emit the event fr task-form.component
+      this.taskService.addTask(this.task).subscribe((tsk) => {
+        // emit the event to task-list
         this.newTask.emit(tsk);
+        this.task = new Task();
       });
     }
   }

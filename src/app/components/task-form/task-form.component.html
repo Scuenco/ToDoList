@@ -1,14 +1,17 @@
 <div class="container">
-  <h2>Add a Task</h2>
   <div class="card card-body m-5">
+    <h3>Add a Task</h3>
     <form >
       <div class="form-group">
         <label for="title">Title</label>
         <input type="text" class="form-control" required [(ngModel)]="task.title" name="title">
       </div>
       <div class="form-group">
-        <label>Completed</label>
-        <input type="text" class="form-control" required [(ngModel)]="task.completed" name="completed">
+        <label for="details">Details</label>
+        <input type="text" class="form-control" [(ngModel)]="task.details" name="details">
+      </div>
+      <div class="form-group">
+        <label>Completed <input type="checkbox" [(ngModel)]="task.completed" name="completed"></label>
       </div>
       <input type="hidden" [(ngModel)]="task.id" name="id">
       <button (click)="addTask()" class="btn btn-dark btn-block mb-2">Add New Task</button>

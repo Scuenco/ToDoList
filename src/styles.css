@@ -1,1 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
+.btn-default {
+    background-color: #665CD0;
+}
+.btn-danger {
+    background-color: #A05CD0;
+}

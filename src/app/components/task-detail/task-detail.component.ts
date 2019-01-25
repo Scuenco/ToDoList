@@ -10,7 +10,8 @@ import { Location } from '@angular/common';
   styleUrls: ['./task-detail.component.css']
 })
 export class TaskDetailComponent implements OnInit {
-task: Task = {id: 0, title: '', completed: false};
+// task: Task = {id: 0, title: '', completed: false};
+task: Task = new Task();
 isEdit = false;
 
   constructor(
@@ -34,10 +35,9 @@ isEdit = false;
       });
   }
   deleteTask(task) {
-    if (confirm('Proceed with delete?')) {
+    if (confirm(`Proceed to delete task: ${task.title}?`)) {
       this.service.deleteTask(task.id).subscribe(() => {
-        confirm(`Task '${task.title}' was deleted.`);
-        this.goBack();
+      this.goBack();
       });
     }
   }
