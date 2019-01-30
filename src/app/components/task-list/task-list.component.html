@@ -1,7 +1,9 @@
 <app-task-form *ngIf="displayTaskForm" (newTask)="getTasks($event)"></app-task-form>
 <div class="container">
   <h3>Task List</h3>
-  <button (click)="displayForm()" class="btn btn-default">Add New Task</button><br/><br/>
+  <button (click)="displayForm()" class="btn btn-default">Add New Task</button>
+  <mat-paginator [length]="length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"
+  (page)="onChangedPage($event)" ></mat-paginator>
   <div class="card" *ngFor="let task of tasks">
     <a [routerLink]="['/tasks', task.id]" routerLinkActive="router-link-active" >{{task.title}}</a>
   </div>

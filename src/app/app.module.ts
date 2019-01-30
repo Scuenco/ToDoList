@@ -3,6 +3,7 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { HttpClientModule} from '@angular/common/http';
 import { FormsModule} from '@angular/forms';
 import { AppRoutingModule } from './/app-routing.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { UsersComponent } from './components/users/users.component';
@@ -13,7 +14,7 @@ import { TaskDetailComponent } from './components/task-detail/task-detail.compon
 import { UserService } from './services/user.service';
 import { TaskService } from './services/task.service';
 import { TaskListComponent } from './components/task-list/task-list.component';
-
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,12 @@ import { TaskListComponent } from './components/task-list/task-list.component';
     TaskListComponent
   ],
   imports: [
-    BrowserModule, HttpClientModule, FormsModule, AppRoutingModule
+    BrowserModule, 
+    HttpClientModule, 
+    FormsModule, 
+    AppRoutingModule, 
+    MatPaginatorModule,
+    BrowserAnimationsModule
   ],
   providers: [UserService, TaskService],
   bootstrap: [AppComponent],

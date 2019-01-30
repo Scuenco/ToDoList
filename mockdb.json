@@ -31,7 +31,7 @@
       "id": 1,
       "title": "Cook diner ",
       "details": "Marinate chicken, cook rice, saute vegetables, slice fruits.",
-      "completed": true
+      "completed": false
     },
     {
       "id": 2,
