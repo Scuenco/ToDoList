@@ -9,8 +9,8 @@ const httpOptions = {
 
 @Injectable()
 export class TaskService {
-  private taskUrl = 'http://localhost:3000/tasks';  // * for local
-  //private taskUrl = 'https://jsonplaceholder.typicode.com/todos';  // for github
+  private taskUrl = 'http://localhost:3001/tasks';  
+  // private taskUrl = 'https://jsonplaceholder.typicode.com/todos';  
   public tasks: Task[];
 
   constructor(private http: HttpClient) { }
